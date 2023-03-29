@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://IK.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=2]
+max_value = 1.5
+_data = [ Vector2( 0.0118483, 1.43919 ), 0.0, 0.0, 0, 0, Vector2( 0.395735, 1.06757 ), -2.1272, -2.1272, 0, 0, Vector2( 0.964455, 0.540541 ), -0.524386, 0.0, 0, 0 ]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.905882, 0.298039, 0.235294, 1, 0.945098, 0.768627, 0.0588235, 1 )
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+segments = 100
+segment_length = 5
+speed = 0.5
+
+[node name="Line2D" type="Line2D" parent="."]
+unique_name_in_owner = true
+width_curve = SubResource( 2 )
+gradient = SubResource( 1 )
+texture_mode = 2
+joint_mode = 1
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
